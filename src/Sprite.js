@@ -1,11 +1,9 @@
 class Sprite {
-	constructor(assetPath, spriteWidth, spriteHeight, width, height) {
+	constructor(assetPath, spriteWidth, spriteHeight) {
 		this.spriteWidth = spriteWidth;
 		this.spriteHeight = spriteHeight;
-		this.width = width;
-		this.height = height;
-		this.assetPath = assetPath;
 		this.image = new Image();
+		this.assetPath = assetPath;
 		this.image.src = assetPath;
 	}
 }
