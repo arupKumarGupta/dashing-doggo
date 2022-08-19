@@ -12,6 +12,7 @@ class Enemy extends GameEntity {
 		this.frameInterval = 1000 / this.fps;
 		this.speed = 8;
 		this.enemySpeedModifier = speedModifier;
+		this.collisionOffset = 30;
 	}
 
 	get spriteWidth() {
@@ -46,7 +47,7 @@ class Enemy extends GameEntity {
 	}
 
 	update(deltaTime) {
-		if (this.x < -this.sprite.width) {
+		if (this.x < -this.spriteWidth) {
 			this.markForDeletion();
 		}
 		this.x -= this.speed * this.enemySpeedModifier;

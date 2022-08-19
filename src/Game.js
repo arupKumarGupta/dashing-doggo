@@ -63,7 +63,7 @@ class Game {
 		for (let enemy of this.enemies) {
 			const dx = this.player.x - enemy.x;
 			const dy = this.player.y - enemy.y;
-			const dist = Math.sqrt(dx * dx + dy * dy);
+			const dist = Math.sqrt(dx * dx + dy * dy) + enemy.collisionOffset;
 			if (dist < enemy.spriteWidth / 2 + this.player.spriteWidth / 2) {
 				this.isGameOver = true;
 				break;

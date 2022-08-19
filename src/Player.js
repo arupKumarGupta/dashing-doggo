@@ -12,6 +12,7 @@ class Player extends GameEntity {
 	}
 	draw(ctx) {
 		ctx.save();
+
 		ctx.drawImage(
 			this.sprite,
 			this.frameX * this.spriteWidth,
