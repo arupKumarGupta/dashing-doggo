@@ -18,7 +18,6 @@ window.addEventListener('load', () => {
 		const { score, isGameOver } = game.run(ctx, delta);
 		gameId = requestAnimationFrame(animate);
 		if (isGameOver) {
-			cancelAnimationFrame(gameId);
 			finalScore = score;
 			showGameOverModal();
 		}
@@ -26,6 +25,7 @@ window.addEventListener('load', () => {
 	animate(lastTime);
 
 	function showGameOverModal() {
+		cancelAnimationFrame(gameId);
 		gameOverModal.style.display = 'block';
 		scoreText.textContent = `Score: ${finalScore}`;
 	}
